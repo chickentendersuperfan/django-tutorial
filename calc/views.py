@@ -8,8 +8,8 @@ def home(request):
 
 def add(request):  
 
-    val1 = int(request.GET['num1']) # Get values from the request (from the form)
-    val2 = int(request.GET['num2'])
+    val1 = int(request.POST['num1']) # Get values from the request (from the form)
+    val2 = int(request.POST['num2'])
     result = val1 + val2
 
     return render(request, 'result.html', {'result': result})

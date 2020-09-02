@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
-#project URLs
+# Project URLs
 urlpatterns = [
-    path('', include('calc.urls')), #request search for home page, look for calc urls
+    path('travello', include('travello.urls')), #request search for home page, look for calc urls
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
