@@ -20,7 +20,8 @@ from django.conf.urls.static import static
 
 # Project URLs
 urlpatterns = [
-    path('travello', include('travello.urls')), #request search for home page, look for calc urls
+    path('travello', include('travello.urls')), #request search for home page, look for travello urls
+    path('accounts/', include('accounts.urls')), #request search for home page, look for account urls
     path('admin/', admin.site.urls),
 ]
 
